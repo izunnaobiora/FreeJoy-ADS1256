@@ -819,8 +819,11 @@ void AxesProcess (dev_config_t * p_dev_config)
 					sensors[k].err_cnt++;
 				}
 			}
+			else if (p_dev_config->pins[source] == MCP3202_CS)				// Hijacked for ADS1256
+			{
+				raw_axis_data[i] = ADS1256_GetAxisData(channel);
+			}
 			else if (p_dev_config->pins[source] == MCP3201_CS ||
-							 p_dev_config->pins[source] == MCP3202_CS ||
 							 p_dev_config->pins[source] == MCP3204_CS ||
 							 p_dev_config->pins[source] == MCP3208_CS)				// source MCP320x
 			{
