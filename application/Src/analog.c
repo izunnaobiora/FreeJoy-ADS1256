@@ -36,7 +36,7 @@
 #include "as5600.h"
 #include "buttons.h"
 #include "encoders.h"
-
+#include "ads1256.h"
 sensor_t sensors[MAX_AXIS_NUM];	
 uint16_t adc_data[MAX_AXIS_NUM];
 uint16_t tmp_adc_data[MAX_AXIS_NUM];
@@ -727,7 +727,7 @@ void ADC_Conversion (void)
   */
 void AxesProcess (dev_config_t * p_dev_config)
 {
-	
+	ADS1256_StepPoll();
 	int32_t tmp[MAX_AXIS_NUM];
 	float tmpf;
 	
