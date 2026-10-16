@@ -471,16 +471,16 @@ void AxesInit (dev_config_t * p_dev_config)
 		}
 		else if (p_dev_config->pins[i] == MCP3202_CS)
 		{
-			for (uint8_t k=0; k<MAX_AXIS_NUM; k++)
-			{
-				if (p_dev_config->axis_config[k].source_main == i && sensors_cnt < MAX_AXIS_NUM)
-				{
-					sensors[sensors_cnt].type = MCP3202;	
-					sensors[sensors_cnt].source = i;
-					sensors_cnt++;
-					break;
-				}
-			}
+			//for (uint8_t k=0; k<MAX_AXIS_NUM; k++)
+			//{
+				//if (p_dev_config->axis_config[k].source_main == i && sensors_cnt < MAX_AXIS_NUM)
+				//{
+				//	sensors[sensors_cnt].type = MCP3202;	
+				//	sensors[sensors_cnt].source = i;
+				//	sensors_cnt++;
+				//	break;
+				//}
+			//}
 		}
 		else if (p_dev_config->pins[i] == MCP3204_CS)
 		{
