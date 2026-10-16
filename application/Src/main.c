@@ -24,7 +24,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "ads1256.h"
 #include "periphery.h"
 #include "config.h"
 #include "analog.h"
@@ -91,7 +91,7 @@ USB_HW_Init();
 	uint8_t buf[MAX_RING_BIF_SIZE];
 	ring_buf_t *rb = RB_GetPtr();
 	RB_Init(rb, buf, MAX_RING_BIF_SIZE);
-	
+ADS1256_Init();
   while (1)
   {
 		ButtonsDebounceProcess(&dev_config);
