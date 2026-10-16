@@ -44,8 +44,9 @@ static int16_t ADS1256_Scale24To16Bit(int32_t raw24) {
 }
 
 void ADS1256_Init(void) {
-    // 1. Enable GPIOA, GPIOB, and SPI1 clocks
-    RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN;
+    // 1. Enable AFIO, GPIOA, GPIOB, and SPI1 clocks, and ensure SPI1 is on PA5/PA6/PA7
+    RCC->APB2ENR |= RCC_APB2ENR_AFIOEN | RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_SPI1EN;
+    AFIO->MAPR   &= ~AFIO_MAPR_SPI1_REMAP;
 
     // 2. Configure CS (PB0) as Push-Pull Output, DRDY (PB1) as Input Pull-Up
     GPIOB->CRL &= ~(0xFF);
