@@ -81,6 +81,7 @@ USB_HW_Init();
 	
 	// init sensors
 	AxesInit(&dev_config);
+	ADS1256_Init();
 	// start sequential periphery reading
 	Timers_Init(&dev_config);
 	
@@ -91,7 +92,7 @@ USB_HW_Init();
 	uint8_t buf[MAX_RING_BIF_SIZE];
 	ring_buf_t *rb = RB_GetPtr();
 	RB_Init(rb, buf, MAX_RING_BIF_SIZE);
-ADS1256_Init();
+
   while (1)
   {
 		ButtonsDebounceProcess(&dev_config);
