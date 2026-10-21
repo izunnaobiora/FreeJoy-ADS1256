@@ -55,7 +55,8 @@ FreeJoy allows you to connect up to 128 digital inputs as single inputs (tied to
 * Radio buttons
 * Sequential buttons
 * 5 shifts
-
+## Fork Details
+This fork was designed purely to add compatibility with the ADS1256 module board I mistakenly ordered. I have no experience writing device drivers, so I used Gemini to slop-code it.
 ## FreeJoy Configurator utility
 FreeJoy configuration is possible using an external [utility](https://github.com/FreeJoy-Team/FreeJoyConfiguratorQt).
 
